@@ -10,7 +10,8 @@ export default createGlobalStyle`
 
   body {
     background: #F0F2F5 ;
-    -webkit-font-smoothing: antialiased
+    -webkit-font-smoothing: antialiased;
+    overflow: scroll;
   }
 
   body, input, button {

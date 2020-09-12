@@ -1,7 +1,11 @@
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 interface ContainerProps {
   size?: 'small' | 'large';
+}
+
+interface LinkItemProps {
+  isFocused: boolean;
 }
 
 export const Container = styled.div<ContainerProps>`
@@ -33,4 +37,18 @@ export const Container = styled.div<ContainerProps>`
       }
     }
   }
+`;
+
+export const LinkItem = styled.span<LinkItemProps>`
+  font-size: 16px;
+  transition: opacity 0.2s;
+  padding-bottom: 10px;
+  &:hover {
+    opacity: 0.7;
+  }
+  ${props =>
+    props.isFocused &&
+    css`
+      border-bottom: 2px solid #ff872c;
+    `}
 `;
